@@ -9,6 +9,9 @@
 #import "TipsWebViewController.h"
 #import "CustomURLCache.h"
 #import "MBProgressHUD.h"
+#import "MMProgressHUD.h"
+#import "MMProgressHUDOverlayView.h"
+
 @interface TipsWebViewController ()
 
 @end
@@ -19,14 +22,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-//        CustomURLCache *urlCache = [[CustomURLCache alloc] initWithMemoryCapacity:20 * 1024 * 1024
-//                                                                     diskCapacity:200 * 1024 * 1024
-//                                                                         diskPath:nil
-//                                                                        cacheTime:0];
-//        [CustomURLCache setSharedURLCache:urlCache];
-        // Custom initialization
         self.hidesBottomBarWhenPushed=YES;
-        //self.automaticallyAdjustsScrollViewInsets = NO;
 #define IOS7_OR_LATER   ( [[[UIDevice currentDevice] systemVersion] compare:@"7.0"] != NSOrderedAscending )
         
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
@@ -43,9 +39,8 @@
 
 -(void)viewWillDisappear:(BOOL)animated
 {
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    //[self.navigationController popViewControllerAnimated:NO];
 }
-
 
 - (void)viewDidLoad
 {
@@ -81,18 +76,33 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //[MMProgressHUD dismissWithSuccess:@"Success!"];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //[MMProgressHUD dismissWithSuccess:@"Success!"];
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     if (count < 5) {
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.mode = MBProgressHUDModeIndeterminate;
-        hud.alpha = 0.5;
+        hud.alpha = 1;
         hud.labelText = @"Loading...";
+        //random color
+//        CGFloat red =  arc4random_uniform(256)/255.f;
+//        CGFloat blue = arc4random_uniform(256)/255.f;
+//        CGFloat green = arc4random_uniform(256)/255.f;
+//        
+//        CGColorRef color = CGColorRetain([UIColor colorWithRed:red green:green blue:blue alpha:1.0].CGColor);
+//        
+//        [[[MMProgressHUD sharedHUD] overlayView] setOverlayColor:color];
+//        
+//        CGColorRelease(color);
+//        
+//        [MMProgressHUD showWithTitle:nil status:@"Loading..."];
+        
         count++;
     }
 }

@@ -135,4 +135,18 @@ typedef enum{
 +(NSArray*)selectsuggestionfeed:(int)s_lock;
 
 -(BOOL)deleteWithStarttime:(NSDate*)starttime;
+
+#pragma -mark notify message
++(BOOL)insertNotifyMessage:(NSString*)msg;
++(BOOL)updateNotifyMessageById:(int)msgid;
++(BOOL)updateNotifyMessageAll;
+/**
+ *	请求所有推送消息如果flagid为0则全部，否则为指定msgid=flagid
+ *
+ *	@return	封装好的数组对象
+ */
++(NSArray*)selectNotifyMessage:(int)flagid;
+
++(BOOL)deleteNotifyMessage:(NSDate*) date;
++(BOOL)deleteNotifyMessageById:(int)msgid;
 @end

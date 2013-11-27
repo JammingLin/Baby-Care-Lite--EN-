@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "OpenFunction.h"
+#import "APService.h"
 
 @implementation OpenFunction
 
@@ -56,4 +57,10 @@
     
     return desp;
 }
+
++ (NSString*)getopenudid
+{
+    return [APService openUDID];
+}
+
 @end

@@ -74,15 +74,14 @@ messageView;
     NSMutableArray *_array2=[[NSMutableArray alloc]initWithCapacity:0];
     NSMutableArray *_array3=[[NSMutableArray alloc]initWithCapacity:0];
     
-    
-    SettingItem *_item1=[[SettingItem alloc]init];
-    SettingItem *_item2=[[SettingItem alloc]init];
-    SettingItem *_item3=[[SettingItem alloc]init];
+    SettingItem *_item1 = [[SettingItem alloc]init];
+    SettingItem *_item2 = [[SettingItem alloc]init];
+    SettingItem *_item3 = [[SettingItem alloc]init];
 
     //SettingItem *_item5=[[SettingItem alloc]init];
-    SettingItem *_item6=[[SettingItem alloc]init];
-    SettingItem *_item7=[[SettingItem alloc]init];
-    SettingItem *_item8=[[SettingItem alloc]init];
+    SettingItem *_item6 = [[SettingItem alloc]init];
+    SettingItem *_item7 = [[SettingItem alloc]init];
+    SettingItem *_item8 = [[SettingItem alloc]init];
 
     _item1.name=NSLocalizedString(@"Baby information",nil);
     _item2.name=NSLocalizedString(@"Metric/Imperial",nil);
@@ -392,8 +391,19 @@ messageView;
 -(void)displayComposerSheet
 {
     MFMailComposeViewController *mailPicker = [[MFMailComposeViewController alloc] init];
-    [mailPicker.navigationItem.leftBarButtonItem setBackgroundImage:[UIImage imageNamed:@"btn2.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    //[mailPicker.navigationItem.leftBarButtonItem setBackgroundImage:[UIImage imageNamed:@"btn2.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     
+#define IOS7_OR_LATER   ( [[[UIDevice currentDevice] systemVersion] compare:@"7.0"] != NSOrderedAscending )
+    
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
+    if ( IOS7_OR_LATER )
+    {
+        mailPicker.edgesForExtendedLayout = UIRectEdgeNone;
+        mailPicker.extendedLayoutIncludesOpaqueBars = NO;
+        mailPicker.modalPresentationCapturesStatusBarAppearance = NO;
+    }
+#endif  // #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
+
 //    mailPicker.navigationBar.tintColor = [UIColor colorWithRed:0x11/255.0 green:0x87/255.0 blue:0x98/255.0 alpha:0xFF/255.0];
 
     mailPicker.mailComposeDelegate = self;
@@ -406,9 +416,9 @@ messageView;
 
     [mailPicker setToRecipients: toRecipients];
     
-    [self presentModalViewController: mailPicker animated:YES];
-
+    [self presentViewController:mailPicker animated:YES completion:nil];
 }
+
 -(void)launchMailAppOnDevice
 {
     NSString *recipients = @"mailto:amoycaretech@gmail.com";
@@ -416,9 +426,8 @@ messageView;
     NSString *email = [NSString stringWithFormat:@"%@", recipients];
     email = [email stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
     [[UIApplication sharedApplication] openURL: [NSURL URLWithString:email]];
-
- 
 }
+
 - (void)mailComposeController:(MFMailComposeViewController *)controller
           didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
@@ -428,6 +437,7 @@ messageView;
     {
         case MFMailComposeResultCancelled:
             msg = @"邮件发送取消";
+            [self alertWithTitle:nil msg:msg];
             break;
         case MFMailComposeResultSaved:
             msg = @"邮件保存成功";
@@ -445,6 +455,7 @@ messageView;
             break;
     }
     
-    [self dismissModalViewControllerAnimated:YES];
+    //[self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

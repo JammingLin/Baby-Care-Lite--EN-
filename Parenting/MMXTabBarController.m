@@ -42,21 +42,34 @@
     
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-//    CGRect frame = [[UIScreen mainScreen] bounds];
-//    self.view.frame = CGRectMake(0, 0, 320, frame.size.height+4);
-
-    [super viewDidAppear:YES];
+    [super viewWillAppear:NO];
     [self setBtnImages:nil];
     [self setBtnHLightImages:nil];
     static dispatch_once_t pred = 0;
-
+    
     dispatch_once(&pred, ^{
         [self initCustomTabbar];
         
     });
-    
+
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+//    CGRect frame = [[UIScreen mainScreen] bounds];
+//    self.view.frame = CGRectMake(0, 0, 320, frame.size.height+4);
+//    [super viewDidAppear:YES];
+//    [self setBtnImages:nil];
+//    [self setBtnHLightImages:nil];
+//    static dispatch_once_t pred = 0;
+//    
+//    dispatch_once(&pred, ^{
+//        [self initCustomTabbar];
+//        
+//    });
+
 }
 
 - (void)setBtnImages:(NSArray*)theBtnImages
@@ -136,7 +149,7 @@
     
     NSString *home=NSLocalizedString(@"tabbarhome", nil);
     NSString *summary=NSLocalizedString(@"tabbarsummary", nil);
-    NSString *advise=NSLocalizedString(@"tabbaradvise", nil);
+    NSString *advise=NSLocalizedString(@"InformationCenter", nil);
     NSString *settings=NSLocalizedString(@"tabbarsettings", nil);
     
     NSArray *ta=@[home,summary,advise,settings];

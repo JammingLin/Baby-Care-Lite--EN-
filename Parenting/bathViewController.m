@@ -180,7 +180,7 @@
 }
 
 - (void)pushSummaryView:(id)sender{
-    [summary MenuSelectIndex:2];
+    [summary MenuSelectIndex:1];
     self.tabBarController.selectedIndex = 1;
 }
 

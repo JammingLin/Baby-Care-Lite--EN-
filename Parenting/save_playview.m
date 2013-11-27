@@ -284,6 +284,7 @@
     }
     
     [self.playSaveDelegate sendPlaySaveChanged:duration andstarttime:curstarttime];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"justdoit"];
 
 }
 -(void)cancle:(UIButton*)sender

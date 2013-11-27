@@ -140,6 +140,13 @@
 
 "Add" = "ADD";
 
+"InformationCenter"="Discovery";
+
+"Circle" = "Circle";
+"Nofity" = "Notify";
+
+"PlotLoading" = "Loading...";
+
 "CopyRight" = "
 Copyright © [2013-2018] [AmoyCare Information Technology Co., Ltd]
 

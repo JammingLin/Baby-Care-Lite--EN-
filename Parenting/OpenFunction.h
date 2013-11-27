@@ -12,5 +12,7 @@
 
 + (float) getSystemVersion;
 + (void) openUserReviews;
-+(NSString*)getpm25description:(int)value;
++ (NSString*)getpm25description:(int)value;
++ (NSString*)getopenudid;
+
 @end

@@ -335,6 +335,7 @@
     }
     
     [self.diaperSaveDelegate sendDiaperSaveChanged:self.status andstarttime:self.start];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"justdoit"];
 }
 
 -(void)cancle:(UIButton*)sender

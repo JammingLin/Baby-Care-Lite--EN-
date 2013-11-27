@@ -7,8 +7,8 @@
 //
 
 #import "defaultAppDelegate.h"
-//#import <ShareSDK/ShareSDK.h>
-
+#import "APService.h"
+#import "UMSocial.h"
 
 @implementation defaultAppDelegate
 
@@ -33,12 +33,11 @@ void UncaughtExceptionHandler(NSException *exception) {
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    application.applicationIconBadgeNumber = 0;
     // Override point for customization after application launch.
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
         [application setStatusBarStyle:UIStatusBarStyleLightContent];
         self.window.clipsToBounds =YES;
-       // self.window.frame  = CGRectMake(0,20,self.window.frame.size.width,self.window.frame.size.height-20);
-       // self.window.bounds = CGRectMake(0, 20, self.window.frame.size.width, self.window.frame.size.height);
     }
     
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"timerOn"]) {
@@ -78,6 +77,18 @@ void UncaughtExceptionHandler(NSException *exception) {
 
     [MobClick startWithAppkey:UMENGAPPKEY];
     
+    // Required
+    [APService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
+                                                   UIRemoteNotificationTypeSound |
+                                                   UIRemoteNotificationTypeAlert)];
+    // Required
+    [APService setupWithOption:launchOptions];
+    
+    //[APService setAlias:@"test" callbackSelector:nil object:self];
+    
+    NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
+    [defaultCenter addObserver:self selector:@selector(networkDidReceiveMessage:) name:kAPNetworkDidReceiveMessageNotification object:nil];
+    
     return YES;
 }
 
@@ -85,18 +96,23 @@ void UncaughtExceptionHandler(NSException *exception) {
 {
     homeViewController    = [[HomeViewController alloc] init];
     summaryViewController = [[SummaryViewController alloc] init];
-    adviseViewController  = [[AdviseMasterViewController alloc] init];
+    //adviseViewController  = [[AdviseMasterViewController alloc] init];
     settingViewController = [[SettingViewController alloc] init];
+    icViewController      = [[InformationCenterViewController alloc] init];
+    
     
     homeNavigationViewController    = [[UINavigationController alloc] initWithRootViewController:homeViewController];
     summaryNavigationViewController = [[UINavigationController alloc] initWithRootViewController:summaryViewController];
-    adviseNavigationViewController  = [[UINavigationController alloc] initWithRootViewController:adviseViewController];
+    //adviseNavigationViewController  = [[UINavigationController alloc] initWithRootViewController:adviseViewController];
     settingNavigationViewController = [[UINavigationController alloc] initWithRootViewController:settingViewController];
+    icNavigationViewController      = [[UINavigationController alloc] initWithRootViewController:icViewController];
+    
     
     NSMutableArray *controllers = [[NSMutableArray alloc] init];
     [controllers addObject:homeNavigationViewController];
     [controllers addObject:summaryNavigationViewController];
-    [controllers addObject:adviseNavigationViewController];
+    //[controllers addObject:adviseNavigationViewController];
+    [controllers addObject:icNavigationViewController];
     [controllers addObject:settingNavigationViewController];
     
     
@@ -105,7 +121,8 @@ void UncaughtExceptionHandler(NSException *exception) {
     self.window.rootViewController  = TabbarController;
     
     //[ShareSDK registerApp:@"b0bf0698120"];
-    //[self initializePlat];
+    [UMSocialData setAppKey:UMENGAPPKEY];
+    [self initializePlat];
     
 }
 
@@ -219,15 +236,15 @@ void UncaughtExceptionHandler(NSException *exception) {
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    application.applicationIconBadgeNumber = 0;
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"weather"]) {
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"weather"];
     }
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-
-    
     _uncaughtExceptionHandler = NSGetUncaughtExceptionHandler();
     NSSetUncaughtExceptionHandler(&UncaughtExceptionHandler);
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
@@ -250,6 +267,57 @@ void UncaughtExceptionHandler(NSException *exception) {
 //                        annotation:annotation
 //                        wxDelegate:self];
     return TRUE;
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    // Required
+    // 取得 APNs 标准信息内容
+//    NSDictionary *aps = [userInfo valueForKey:@"aps"];
+//    NSString *content = [aps valueForKey:@"alert"]; //推送显示的内容
+//    //NSInteger badge = [[aps valueForKey:@"badge"] integerValue]; //badge数量
+//    //NSString *sound = [aps valueForKey:@"sound"]; //播放的声音
+//    
+//    // 取得自定义字段内容
+//    //NSString *customizeField1 = [userInfo valueForKey:@"customizeField1"]; //自定义参数，key是自己定义的
+//    //NSLog(@"content =[%@], badge=[%d], sound=[%@], customize field =[%@]",content,badge,sound,customizeField1);
+//    
+//    application.applicationIconBadgeNumber += 1;
+//    //当用户打开程序时候收到远程通知后执行
+//    if (application.applicationState == UIApplicationStateActive) {
+//        // Nothing to do if applicationState is Inactive, the iOS already displayed an alert view.
+//        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"温馨提示"
+//                                                            message:[NSString stringWithFormat:@"\n%@",
+//                                                                     [[userInfo objectForKey:@"aps"] objectForKey:@"alert"]]
+//                                                           delegate:self
+//                                                  cancelButtonTitle:@"OK"
+//                                                  otherButtonTitles:nil];
+//        
+//        dispatch_async(dispatch_get_global_queue(0,0), ^{
+//            //hide the badge
+//            application.applicationIconBadgeNumber = 0;
+//            
+//        });
+//        
+//        [alertView show];
+//    }
+//
+//    [DataBase insertNotifyMessage:content];
+//    [APService handleRemoteNotification:userInfo];
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    // Required
+    [APService registerDeviceToken:deviceToken];
+   
+}
+
+- (void)networkDidReceiveMessage:(NSNotification *)notification {
+    //NSDictionary * userInfo = [notification userInfo];
+    //NSString *content = [userInfo valueForKey:@"content"];
+    //NSString *extras = [userInfo valueForKey:@"extras"];
+    //NSString *customizeField1 = [extras valueForKey:@"customizeField1"]; //自定义参数，key是自己定义的
+    //[DataBase insertNotifyMessage:content];
 }
 
 @end

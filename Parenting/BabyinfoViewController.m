@@ -8,6 +8,8 @@
 
 #import "BabyinfoViewController.h"
 
+static int age = 0;
+
 @interface BabyinfoViewController ()
 
 @end

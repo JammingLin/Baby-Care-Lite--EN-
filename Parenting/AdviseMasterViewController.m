@@ -37,11 +37,11 @@
         [titleText setFont:[UIFont fontWithName:@"Arial-BoldMT" size:20]];
         titleText.textColor = [UIColor whiteColor];
         [titleText setTextAlignment:NSTextAlignmentCenter];
-        [titleText setText:NSLocalizedString(@"btnadvise", nil)];
+        [titleText setText:NSLocalizedString(@"Tips", nil)];
         [titleView addSubview:titleText];
         
         self.navigationItem.titleView = titleView;
-        
+        self.hidesBottomBarWhenPushed=YES;
 #define IOS7_OR_LATER   ( [[[UIDevice currentDevice] systemVersion] compare:@"7.0"] != NSOrderedAscending )
         
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
@@ -73,6 +73,16 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    //[self.tableView reloadData];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    //[self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 #pragma mark - Table view data source
@@ -292,16 +302,9 @@
     }
     
     url = NSLocalizedString(key, nil);
-    
-    //NSLog(@"index key: %@,%@", key, url);
     TipsWebViewController *tips = [[TipsWebViewController alloc] init];
     [tips setTipsUrl:url];
     [self.navigationController pushViewController:tips animated:YES];
-
-    //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
-//    NSLog(@"indexPath=%@",indexPath);
-//    NSLog(@"dicClicked=%@",dicClicked);
-//    NSLog(@"index row=%d,section=%d",indexPath.row, indexPath.section);
 }
 
 - (void)viewDidUnload {

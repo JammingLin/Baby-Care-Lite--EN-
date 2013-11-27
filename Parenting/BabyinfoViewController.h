@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-static int age = 0;
 @interface BabyinfoViewController : UIViewController< UITextFieldDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {
     UIDatePicker *datepicker;

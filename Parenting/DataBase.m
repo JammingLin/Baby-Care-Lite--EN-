@@ -9,6 +9,7 @@
 #import "DataBase.h"
 #import "FMDatabase.h"
 #import "AdviseData.h"
+#import "NotifyItem.h"
 
 @implementation DataBase
 +(id)dataBase
@@ -700,7 +701,7 @@
 
 + (NSArray *)dataFromTable:(int)fileTag andpage:(int)scrollpage andTable:(NSString *)table
 {
-    NSLog(@"dataFromTable:%d, page:%d, table:%@", fileTag, scrollpage, table);
+    //NSLog(@"dataFromTable:%d, page:%d, table:%@", fileTag, scrollpage, table);
     int week    = [currentdate getCurrentWeek];
     int weekday = [currentdate getCurrentWeekDay];
     int month   = [currentdate getCurrentMonth];
@@ -1217,14 +1218,14 @@
     while([resultset next])
     {
         NSLog(@"NO.%d", i+1);
-        NSString *str=[NSString stringWithFormat:@"%@%@,%@%@,%@%@",NSLocalizedString(@"Content:", nil),[resultset stringForColumn:@"content"],NSLocalizedString(@"From:", nil),[resultset stringForColumn:@"from"],NSLocalizedString(@"Author:", nil),[resultset stringForColumn:@"author"]];
+        //NSString *str=[NSString stringWithFormat:@"%@%@,%@%@,%@%@",NSLocalizedString(@"Content:", nil),[resultset stringForColumn:@"content"],NSLocalizedString(@"From:", nil),[resultset stringForColumn:@"from"],NSLocalizedString(@"Author:", nil),[resultset stringForColumn:@"author"]];
         
         AdviseData *ad = [[AdviseData alloc]init];
         ad.mAuthor  = [resultset stringForColumn:@"author"];
         ad.mContent = [resultset stringForColumn:@"content"];
         ad.mFromUrl = [resultset stringForColumn:@"from"];
         ad.mType    = ADVISE_TYPE_BATH;
-        NSLog(@"%@",str);
+        //NSLog(@"%@",str);
         [array addObject:ad];
         i++;
     }
@@ -1256,13 +1257,13 @@
     while([resultset next])
     {
         NSLog(@"NO.%d", i+1);
-        NSString *str=[NSString stringWithFormat:@"%@%@,%@%@,%@%@",NSLocalizedString(@"Content:", nil),[resultset stringForColumn:@"content"],NSLocalizedString(@"From:", nil),[resultset stringForColumn:@"from"],NSLocalizedString(@"Author:", nil),[resultset stringForColumn:@"author"]];
+        //NSString *str=[NSString stringWithFormat:@"%@%@,%@%@,%@%@",NSLocalizedString(@"Content:", nil),[resultset stringForColumn:@"content"],NSLocalizedString(@"From:", nil),[resultset stringForColumn:@"from"],NSLocalizedString(@"Author:", nil),[resultset stringForColumn:@"author"]];
         AdviseData *ad = [[AdviseData alloc]init];
         ad.mAuthor  = [resultset stringForColumn:@"author"];
         ad.mContent = [resultset stringForColumn:@"content"];
         ad.mFromUrl = [resultset stringForColumn:@"from"];
         ad.mType    = ADVISE_TYPE_BATH;
-        NSLog(@"%@",str);
+        //NSLog(@"%@",str);
         [array addObject:ad];
         i++;
     }
@@ -1291,14 +1292,14 @@
     while([resultset next])
     {
         NSLog(@"NO.%d", i+1);
-        NSString *str=[NSString stringWithFormat:@"%@%@,%@%@,%@%@",NSLocalizedString(@"Content:", nil),[resultset stringForColumn:@"content"],NSLocalizedString(@"From:", nil),[resultset stringForColumn:@"from"],NSLocalizedString(@"Author:", nil),[resultset stringForColumn:@"author"]];
+        //NSString *str=[NSString stringWithFormat:@"%@%@,%@%@,%@%@",NSLocalizedString(@"Content:", nil),[resultset stringForColumn:@"content"],NSLocalizedString(@"From:", nil),[resultset stringForColumn:@"from"],NSLocalizedString(@"Author:", nil),[resultset stringForColumn:@"author"]];
         
         AdviseData *ad = [[AdviseData alloc]init];
         ad.mAuthor  = [resultset stringForColumn:@"author"];
         ad.mContent = [resultset stringForColumn:@"content"];
         ad.mFromUrl = [resultset stringForColumn:@"from"];
         ad.mType    = ADVISE_TYPE_BATH;
-        NSLog(@"%@",str);
+        //NSLog(@"%@",str);
         [array addObject:ad];
         i++;
     }
@@ -1329,13 +1330,13 @@
     while([resultset next])
     {
         NSLog(@"NO.%d", i+1);
-        NSString *str=[NSString stringWithFormat:@"%@%@,%@%@,%@%@",NSLocalizedString(@"Content:", nil),[resultset stringForColumn:@"content"],NSLocalizedString(@"From:", nil),[resultset stringForColumn:@"from"],NSLocalizedString(@"Author:", nil),[resultset stringForColumn:@"author"]];
+        //NSString *str=[NSString stringWithFormat:@"%@%@,%@%@,%@%@",NSLocalizedString(@"Content:", nil),[resultset stringForColumn:@"content"],NSLocalizedString(@"From:", nil),[resultset stringForColumn:@"from"],NSLocalizedString(@"Author:", nil),[resultset stringForColumn:@"author"]];
         AdviseData *ad = [[AdviseData alloc]init];
         ad.mAuthor  = [resultset stringForColumn:@"author"];
         ad.mContent = [resultset stringForColumn:@"content"];
         ad.mFromUrl = [resultset stringForColumn:@"from"];
         ad.mType    = ADVISE_TYPE_BATH;
-        NSLog(@"%@",str);
+        //NSLog(@"%@",str);
         [array addObject:ad];
         i++;
     }
@@ -1366,14 +1367,14 @@
     while([resultset next])
     {
         NSLog(@"NO.%d", i+1);
-        NSString *str=[NSString stringWithFormat:@"%@%@,%@%@,%@%@",NSLocalizedString(@"Content:", nil),[resultset stringForColumn:@"content"],NSLocalizedString(@"From:", nil),[resultset stringForColumn:@"from"],NSLocalizedString(@"Author:", nil),[resultset stringForColumn:@"author"]];
+        //NSString *str=[NSString stringWithFormat:@"%@%@,%@%@,%@%@",NSLocalizedString(@"Content:", nil),[resultset stringForColumn:@"content"],NSLocalizedString(@"From:", nil),[resultset stringForColumn:@"from"],NSLocalizedString(@"Author:", nil),[resultset stringForColumn:@"author"]];
         
         AdviseData *ad = [[AdviseData alloc]init];
         ad.mAuthor  = [resultset stringForColumn:@"author"];
         ad.mContent = [resultset stringForColumn:@"content"];
         ad.mFromUrl = [resultset stringForColumn:@"from"];
         ad.mType    = ADVISE_TYPE_BATH;
-        NSLog(@"%@",str);
+        //NSLog(@"%@",str);
         [array addObject:ad];
         i++;
     }
@@ -1618,6 +1619,172 @@
     return res;
 
 
+}
+
++(BOOL)insertNotifyMessage:(NSString *)msg
+{
+    BOOL res;
+    FMDatabase *db=[FMDatabase databaseWithPath:DBPATH];
+    res=[db open];
+    if (!res) {
+        NSLog(@"数据库打开失败");
+        return res;
+    }
+    res=[db executeUpdate:@"CREATE TABLE if not exists notify_message (msgid INTEGER PRIMARY KEY AUTOINCREMENT, message Varchar DEFAULT NULL, notify_time Timestamp DEFAULT NULL, status INTEGER NOT NULL)"];
+    
+    if (!res) {
+        NSLog(@"表格创建失败");
+        return res;
+    }
+    
+    
+    res=[db executeUpdate:@"insert into notify_message (message, notify_time, status) values(?,?,0)",msg,[currentdate date]];
+    if (!res)
+    {
+        NSLog(@"插入失败");
+        return res;
+    }
+    [db close];
+    return res;
+}
+
++(BOOL)updateNotifyMessageById:(int)msgid
+{
+    BOOL res;
+    FMDatabase *db=[FMDatabase databaseWithPath:DBPATH];
+    res=[db open];
+    if (!res) {
+        NSLog(@"数据库打开失败");
+        return res;
+    }
+    
+    if (!res) {
+        NSLog(@"表格创建失败");
+        return res;
+    }
+    res=[db executeUpdate:@"update notify_message set status = 1 where msgid=?",[NSNumber numberWithInt:msgid]];
+    if (!res) {
+        NSLog(@"更新失败");
+        return res;
+    }
+    [db close];
+    return res;
+}
+
++(BOOL)updateNotifyMessageAll
+{
+    BOOL res;
+    FMDatabase *db=[FMDatabase databaseWithPath:DBPATH];
+    res=[db open];
+    if (!res) {
+        NSLog(@"数据库打开失败");
+        return res;
+    }
+    
+    if (!res) {
+        NSLog(@"表格创建失败");
+        return res;
+    }
+    res=[db executeUpdate:@"update notify_message set status = 1 where status=0 "];
+    if (!res) {
+        NSLog(@"更新失败");
+        return res;
+    }
+    [db close];
+    return res;
+}
+
++(NSArray*)selectNotifyMessage:(int)flagid;
+{
+    NSMutableArray *array=[[NSMutableArray alloc]initWithCapacity:0];
+    BOOL res;
+    FMDatabase *db=[FMDatabase databaseWithPath:DBPATH];
+    res=[db open];
+    if (!res) {
+        NSLog(@"数据库打开失败");
+        return nil;
+    }
+    res=[db executeUpdate:@"CREATE TABLE if not exists notify_message (msgid INTEGER PRIMARY KEY AUTOINCREMENT, message Varchar DEFAULT NULL, notify_time Timestamp DEFAULT NULL, status INTEGER NOT NULL)"];
+  
+    if (!res) {
+        NSLog(@"表格创建失败");
+        return nil;
+        
+    }
+    
+    if (flagid == 0)
+    {
+        FMResultSet *set=[db executeQuery:@"select * from  notify_message order by notify_time desc"];
+        while ([set next])
+        {
+            NotifyItem *item = [[NotifyItem alloc]init];
+            item.notifyid = [set intForColumn:@"msgid"];
+            item.content  = [set stringForColumn:@"message"];
+            item.status   = [set intForColumn:@"status"];
+            item.notify_time = [set dateForColumn:@"notify_time"];
+            [array addObject:item];
+        }
+
+    }
+    else
+    {
+        FMResultSet *set=[db executeQuery:@"select * from  notify_message where msgid=? order by notify_time desc", [NSNumber numberWithInt:flagid]];
+        while ([set next])
+        {
+            NotifyItem *item = [[NotifyItem alloc]init];
+            item.notifyid = [set intForColumn:@"msgid"];
+            item.content  = [set stringForColumn:@"message"];
+            item.status   = [set intForColumn:@"status"];
+            item.notify_time = [set dateForColumn:@"notify_time"];
+            [array addObject:item];
+        }
+
+    }
+    
+    [db close];
+    return  array;
+
+}
+
++(BOOL)deleteNotifyMessage:(NSDate*)date
+{
+    BOOL res;
+    FMDatabase *db=[FMDatabase databaseWithPath:DBPATH];
+    res=[db open];
+    if (!res) {
+        NSLog(@"数据库打开失败");
+        return res;
+    }
+    
+    if (!res) {
+        NSLog(@"表格创建失败");
+        return res;
+    }
+    
+    res=[db executeUpdate:@"delete from notify_message where notify_time < ?",date];
+    [db close];
+    return res;
+
+}
+
++(BOOL)deleteNotifyMessageById:(int)msgid
+{
+    BOOL res;
+    FMDatabase *db=[FMDatabase databaseWithPath:DBPATH];
+    res=[db open];
+    if (!res) {
+        NSLog(@"数据库打开失败");
+        return res;
+    }
+    
+    if (!res) {
+        NSLog(@"表格创建失败");
+        return res;
+    }
+    
+    res=[db executeUpdate:@"delete from notify_message where msgid = ?", [NSNumber numberWithInt:msgid]];
+    [db close];
+    return res;
 }
 
 @end

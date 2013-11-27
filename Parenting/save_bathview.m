@@ -429,6 +429,7 @@
     }
     
     starttimetext.text = [currentdate getStarttimefromdate:curstarttime];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"justdoit"];
 }
 
 -(void)actionsheetStartTimeShow

@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "SettingViewController.h"
-#import "AdviseViewController.h"
 #import "SummaryViewController.h"
 #import "HomeViewController.h"
 #import "AdviseMasterViewController.h"
+#import "InformationCenterViewController.h"
 
 #import "MMXTabBarController.h"
 
@@ -23,6 +23,7 @@
     MMXTabBarController         *TabbarController;
     SettingViewController       *settingViewController;
     AdviseMasterViewController  *adviseViewController;
+    InformationCenterViewController *icViewController;
     SummaryViewController       *summaryViewController;
     HomeViewController          *homeViewController;
     
@@ -30,7 +31,7 @@
     UINavigationController *adviseNavigationViewController;
     UINavigationController *summaryNavigationViewController;
     UINavigationController *homeNavigationViewController;
-
+    UINavigationController *icNavigationViewController;
   
 }
 @property (strong, nonatomic) UIWindow *window;
