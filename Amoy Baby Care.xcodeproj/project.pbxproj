@@ -3080,8 +3080,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Amoycare Information Technology Co., Ltd (D6MQ5ZWZVN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Amoycare Information Technology Co., Ltd (D6MQ5ZWZVN)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -3112,8 +3112,8 @@
 					"-Objc",
 				);
 				PRODUCT_NAME = "Amoy Baby Care";
-				PROVISIONING_PROFILE = "9522CD76-E9C3-4F3C-925F-AEBDEF13DD36";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9522CD76-E9C3-4F3C-925F-AEBDEF13DD36";
+				PROVISIONING_PROFILE = "65585F01-A29C-42E5-B61F-E32F6D9ED6B3";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "65585F01-A29C-42E5-B61F-E32F6D9ED6B3";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = armv7;
@@ -3126,8 +3126,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Amoycare Information Technology Co., Ltd (D6MQ5ZWZVN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Amoycare Information Technology Co., Ltd (D6MQ5ZWZVN)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -3158,8 +3158,8 @@
 					"-Objc",
 				);
 				PRODUCT_NAME = "Amoy Baby Care";
-				PROVISIONING_PROFILE = "9522CD76-E9C3-4F3C-925F-AEBDEF13DD36";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9522CD76-E9C3-4F3C-925F-AEBDEF13DD36";
+				PROVISIONING_PROFILE = "65585F01-A29C-42E5-B61F-E32F6D9ED6B3";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "65585F01-A29C-42E5-B61F-E32F6D9ED6B3";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = armv7;

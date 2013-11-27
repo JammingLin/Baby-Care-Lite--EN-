@@ -84,8 +84,6 @@ void UncaughtExceptionHandler(NSException *exception) {
     // Required
     [APService setupWithOption:launchOptions];
     
-    //[APService setAlias:@"test" callbackSelector:nil object:self];
-    
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
     [defaultCenter addObserver:self selector:@selector(networkDidReceiveMessage:) name:kAPNetworkDidReceiveMessageNotification object:nil];
     
@@ -96,14 +94,12 @@ void UncaughtExceptionHandler(NSException *exception) {
 {
     homeViewController    = [[HomeViewController alloc] init];
     summaryViewController = [[SummaryViewController alloc] init];
-    //adviseViewController  = [[AdviseMasterViewController alloc] init];
     settingViewController = [[SettingViewController alloc] init];
     icViewController      = [[InformationCenterViewController alloc] init];
     
     
     homeNavigationViewController    = [[UINavigationController alloc] initWithRootViewController:homeViewController];
     summaryNavigationViewController = [[UINavigationController alloc] initWithRootViewController:summaryViewController];
-    //adviseNavigationViewController  = [[UINavigationController alloc] initWithRootViewController:adviseViewController];
     settingNavigationViewController = [[UINavigationController alloc] initWithRootViewController:settingViewController];
     icNavigationViewController      = [[UINavigationController alloc] initWithRootViewController:icViewController];
     
@@ -111,7 +107,6 @@ void UncaughtExceptionHandler(NSException *exception) {
     NSMutableArray *controllers = [[NSMutableArray alloc] init];
     [controllers addObject:homeNavigationViewController];
     [controllers addObject:summaryNavigationViewController];
-    //[controllers addObject:adviseNavigationViewController];
     [controllers addObject:icNavigationViewController];
     [controllers addObject:settingNavigationViewController];
     
@@ -227,10 +222,6 @@ void UncaughtExceptionHandler(NSException *exception) {
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    
-    
-
-
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
