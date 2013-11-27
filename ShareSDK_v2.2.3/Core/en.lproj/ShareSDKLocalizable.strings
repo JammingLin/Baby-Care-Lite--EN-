@@ -1,0 +1,131 @@
+/* 
+  ShareSDKLocalizable.strings
+  AppgoFramework
+
+
+  Created by ShareSDK.cn on 13-1-14.
+  官网地址:http://www.ShareSDK.cn
+  技术支持邮箱:support@sharesdk.cn
+  官方微信:ShareSDK   （如果发布新版本的话，我们将会第一时间通过微信将版本更新内容推送给您。如果使用过程中有任何问题，也可以通过微信与我们取得联系，我们将会在24小时内给予回复）
+  商务QQ:4006852216
+  Copyright (c) 2013年 ShareSDK.cn. All rights reserved.
+
+*/
+
+"ERROR_DESC_UNREGISTER" = "not initialized SDK";
+"ERROR_DESC_INVALID_PARAM" = "Invalid arguments passed";
+"ERROR_DESC_API_NOT_SUPPORT" = "does not support this function";
+"ERROR_DESC_UNKNOWN" = "Unknown error";
+"ERROR_DESC_WEIXIN_NOT_INTEGRATED" = "not yet integrated micro-channel interfaces";
+"ERROR_DESC_WEIXIN_UNKNOWN_MEDIA_TYPE" = "Unknown message type";
+"ERROR_DESC_QQ_SEND_FAIL" = "Send failed";
+"ERROR_DESC_QQ_NOT_INSTALLED" = "not installed QQ";
+"ERROR_DESC_QQ_API_IS_NOT_SUPPORT" = "QQ current version does not support this feature";
+"ERROR_DESC_QQ_UNKNOWN_MEDIA_TYPE" = "Unknown message type";
+"ERROR_DESC_UNAUTH" = "not authorized";
+"ERROR_DESC_FACEBOOK_CANCEL_ADD_FRIEND" = "Cancel Add Friend";
+"ERROR_DESC_TWITTER_GET_FRIENDS_API_DEPRECATED" = "This method is obsolete, use getFriendsWithPage method instead";
+"ERROR_DESC_WEIXIN_NOT_INSTALL" = "not installed micro-letters";
+"ERROR_DESC_WEIXIN_API_IS_NOT_SUPPORT" = "current micro-channel version does not support this feature";
+"ERROR_DESC_WEIXIN_SEND_REQUEST_ERROR" = "Request micro-channel OpenApi failed";
+"ERROR_DESC_QQ_NOT_INTEGRATED" = "not yet integrated QQ Interface";
+"ERROR_DESC_PRINT_NOT_SUPPORT" = "The device is not allowed to print";
+"ERROR_DESC_SYS_VER_LOW_THAN" = "This function is not supported by the following system version iOS% @";
+"ERROR_DESC_MAIL_NOT_SUPPORT" = "This device does not support e-mail e-mail account to share or not set";
+"ERROR_DESC_SMS_NOT_SUPPORT" = "This device does not support SMS share";
+"ERROR_DESC_NOT_CONNECT" = "not yet integrated the platform!";
+"ERROR_DESC_NO_NETWORK" = "device is not connected to the network!";
+
+"ShareTypeSinaWeibo" = "Sina microblogging";
+"ShareType163Weibo" = "NetEase microblogging";
+"ShareTypeDouBan" = "watercress";
+"ShareTypeEvernote" = "Evernote";
+"ShareTypeFacebook" = "Facebook";
+"ShareTypeAirPrint" = "print";
+"ShareTypeCopy" = "copy";
+"ShareTypeFoursquare" = "Foursquare";
+"ShareTypeGooglePlus" = "Google+";
+"ShareTypeInstagram" = "Instagram";
+"ShareTypeKaixin" = "happy net";
+"ShareTypeLinkedIn" = "LinkedIn";
+"ShareTypeMail" = "Mail";
+"ShareTypePengyou" = "friend network";
+"ShareTypeQQ" = "QQ";
+"ShareTypeQQSpace" = "QQ space";
+"ShareTypeRenren" = "all network";
+"ShareTypeSMS" = "text";
+"ShareTypeSohuWeibo" = "Sohu microblogging";
+"ShareTypeTencentWeibo" = "Tencent microblogging";
+"ShareTypeTumbir" = "Tumbir";
+"ShareTypeTwitter" = "Twitter";
+"ShareTypeWeixiSession" = "micro letter Friends";
+"ShareTypeWeixiTimeline" = "micro-channel circle of friends";
+"ShareTypeInstapaper" = "Instapaper";
+"ShareTypeYouDaoNote" = "Ethics cloud notes";
+"ShareTypeSohuKan" = "Sohu carry-look";
+"ShareTypePocket" = "Pocket";
+
+"ALTER_VIEW_TITLE" = "prompt";
+"ALTER_VIEW_I_KNOWN_BUTTON" = "know";
+
+"MSG_SHARE_SUCCESS" = "% @ share success!";
+"MSG_SHARE_FAIL" = "% @ Share Failed!% @";
+"MSG_SHARE_FAIL_2" = "Sharing failed!";
+"MSG_SENDING" = "Sending ...";
+"MSG_DEVICE_CAMERA_NOT_SUPPORT" = "This device does not support camera function";
+"MSG_DEVICE_ALBUM_NOT_SUPPORT" = "This device does not support the album features";
+
+"PRINT_JOB_NAME" = "content sharing";
+
+"WEIXIN_SESSION_NAME" = "micro letter Friends";
+"WEIXIN_TIMELINE_NAME" = "micro-channel circle of friends";
+"WEIXIN_MSG_SEND_SUCCESS" = "% @ sent successfully!";
+"WEIXIN_MSG_SEND_FAIL" = "% @ send failed:% @";
+
+"QQ_MSG_SEND_SUCCESS" = "QQ message sent successfully";
+"QQ_MSG_SEND_FAIL" = "Send QQ message failed:% @";
+
+"SHARE_VIEW_CANCEL_BUTTON" = "Cancel";
+"SHARE_VIEW_PUBLISH_BUTTON" = "post";
+"SHARE_VIEW_MSG_INVALID_CONTENT" = "Please enter share content";
+"SHARE_VIEW_MSG_INVALID_CLIENTS" = "Please select the target platform sharing";
+"SHARE_VIEW_DEF_PIC_PUBLISH_CONTENT" = "photo sharing";
+"SHARE_VIEW_ACTIONSHEET_CLEAR_CONTENT_ITEM" = "Empty contents";
+"SHARE_VIEW_ACTIONSHEET_OK_ITEM" = "OK";
+"SHARE_VIEW_ACTIONSHEET_CANCEL_ITEM" = "Cancel";
+"SHARE_VIEW_ACTIONSHEET_REMOVE_PHOTO_ITEM" = "Delete Photo";
+"SHARE_VIEW_ACTIONSHEET_VIEW_PHOTO_ITEM" = "View Photos";
+"SHARE_VIEW_ACTIONSHEET_TAKE_PHOTO_ITEM" = "photos ...";
+"SHARE_VIEW_ACTIONSHEET_SELECT_PHOTO_ITEM" = "Select the photo ...";
+"SHARE_VIEW_AUTH_TITLE" = "Bind% @";
+"SHARE_VIEW_TITLE" = "content sharing";
+"SHARE_VIEW_ONE_KEY_LIST_TITLE" = "Name";
+"SHARE_ACTION_SHEET_CANCEL_BUTTON" = "Cancel";
+"SHARE_VIEW_TOPIC" = "topics";
+
+"FRIENDS_VIEW_TITLE" = "contact";
+"FRIENDS_VIEW_CANCEL_BUTTON" = "Cancel";
+"FRIENDS_VIEW_SEARCHBAR_PLACEHOLDER" = "in the contacts search ...";
+"FRIENDS_VIEW_SEARCH_RESULT_SECTION_TITLE" = "Search results";
+"FRIENDS_VIEW_RECENT_SECTION_TITLE" = "Recent Contacts";
+
+"ACCOUNT_VIEW_OK_BUTTON" = "OK";
+"ACCOUNT_VIEW_TIPS_SECTION_TITLE" = "license invalid, please re-authorization";
+
+"AUTH_VIEW_CANCEL_BUTTON" = "Cancel";
+"AUTH_VIEW_TITLE_1" = "Sina microblogging";
+"AUTH_VIEW_TITLE_2" = "Tencent microblogging";
+"AUTH_VIEW_TITLE_3" = "Sohu microblogging";
+"AUTH_VIEW_TITLE_4" = "NetEase microblogging";
+"AUTH_VIEW_TITLE_5" = "watercress";
+"AUTH_VIEW_TITLE_6" = "QQ space";
+"AUTH_VIEW_TITLE_7" = "all network";
+"AUTH_VIEW_TITLE_8" = "happy net";
+"AUTH_VIEW_TITLE_10" = "Facebook";
+"AUTH_VIEW_TITLE_11" = "Twitter";
+"AUTH_VIEW_TITLE_12" = "Evernote";
+"AUTH_VIEW_TITLE_25" = "Instapaper";
+"AUTH_VIEW_TITLE_26" = "Pocket";
+"AUTH_VIEW_TITLE_27" = "Ethics cloud notes";
+"AUTH_VIEW_TITLE_28" = "Sohu carry-look";
+"AUTH_VIEW_FOLLOW_ME" = "attention to micro-Bo";

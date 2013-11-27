@@ -1,0 +1,80 @@
+//
+// Prefix header for all source files of the 'Parenting' target in the 'Parenting' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+#import "SuggestView.h"
+#import "AdviseScrollview.h"
+#import "feedViewController.h"
+#import "diaperViewController.h"
+#import "sleepViewController.h"
+#import "playViewController.h"
+#import "bathViewController.h"
+#import "currentdate.h"
+#import "save_feedview.h"
+#import "save_bathview.h"
+#import "save_playview.h"
+#import "save_sleepview.h"
+#import "save_diaperview.h"
+#import "DataBase.h"
+#import "ActivityItem.h"
+#import "WeatherView.h"
+#import "Weather.h"
+#import "FMDatabase.h"
+#import "SummaryItem.h"
+#import "OpenFunction.h"
+#import "ChineseToPinyin.h"
+#import "defaultAppDelegate.h"
+#import "RNGridMenu.h"
+#import "MobClick.h"
+
+#define PHOTOPATH ([NSString stringWithFormat:@"%@/Documents/baby.png",NSHomeDirectory()])
+#define SHAREPATH ([NSString stringWithFormat:@"%@/Documents/share.png",NSHomeDirectory()])
+#define DBPATH ([NSString stringWithFormat:@"%@/Documents/babycare.db",NSHomeDirectory()])
+
+#define ADVISE_TYPE_DIAPER 1
+#define ADVISE_TYPE_SLEEP  2
+#define ADVISE_TYPE_PLAY   3
+#define ADVISE_TYPE_FEED   4
+#define ADVISE_TYPE_BATH   5
+#define ADVISE_TYPE_ALL    6
+
+/**
+ *	QuadCurveMenu
+ *
+ *	@param	...	选择项目id
+ *
+ *	@return	0~5（all,play,bath,feed,sleep,diaper）
+ */
+#define QCM_TYPE_ALL    0
+#define QCM_TYPE_PLAY   1
+#define QCM_TYPE_BATH   2
+#define QCM_TYPE_FEED   3
+#define QCM_TYPE_SLEEP  4
+#define QCM_TYPE_DIAPER 5
+
+//去log
+#ifdef DEBUG
+#else
+#define NSLog(...){};
+#endif
+#define G_YADDONVERSION ([OpenFunction getSystemVersion] >= 7.0 ?0:0)
+
+#define SAVEVIEW_YADDONVERSION ([OpenFunction getSystemVersion] >= 7.0 ?64:0)
+
+#define G_XREDUCEONVERSION ([OpenFunction getSystemVersion] >= 7.0 ?20.0:0)
+
+#define CUSTOMER_COUNTRY 0 // US,1 CN
+
+#define PM25INTOKEN @"xNKhsJsD9fM2yCU9mXvp"
+
+#define UMENGAPPKEY @"528dced956240bb537029bfa"
