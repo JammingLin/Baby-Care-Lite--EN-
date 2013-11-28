@@ -166,6 +166,8 @@
     
     [self makeBabyInfo];
     
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"justdoit"];
+    
     // Do any additional setup after loading the view from its nib.
 }
 -(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response

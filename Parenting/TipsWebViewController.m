@@ -88,8 +88,9 @@
     if (count < 5) {
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.mode = MBProgressHUDModeIndeterminate;
-        hud.alpha = 1;
-        hud.labelText = @"Loading...";
+        hud.alpha = 0.5;
+        hud.color = [UIColor grayColor];
+        hud.labelText = NSLocalizedString(@"PlotLoading", nil);
         //random color
 //        CGFloat red =  arc4random_uniform(256)/255.f;
 //        CGFloat blue = arc4random_uniform(256)/255.f;

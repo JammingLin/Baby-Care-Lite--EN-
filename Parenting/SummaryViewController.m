@@ -13,6 +13,7 @@
 #import "CustumCell.h"
 #import "AdviseData.h"
 #import "AdviseTableViewCell.h"
+#import "TipsWebViewController.h"
 
 #define originalHeight 25.0f
 #define newHeight 100.0f
@@ -74,20 +75,26 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.mode = MBProgressHUDModeIndeterminate;
-    hud.color = [UIColor grayColor];
-    hud.alpha = 0.5;
-    hud.labelText = NSLocalizedString(@"PlotLoading", nil);
-    if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"justdoit"] boolValue] == YES) {
-        NSThread *thread = [[NSThread alloc]initWithTarget:self selector:@selector(willShowView:) object:[NSNumber numberWithBool:YES]];
-        [thread start];
-        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"justdoit"];
+    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"gototips"]boolValue] == YES) {
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"gototips"];
     }
     else
     {
-        NSThread *thread = [[NSThread alloc]initWithTarget:self selector:@selector(willShowView:) object:[NSNumber numberWithBool:NO]];
-        [thread start];
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeIndeterminate;
+        hud.color = [UIColor grayColor];
+        hud.alpha = 0.5;
+        hud.labelText = NSLocalizedString(@"PlotLoading", nil);
+        if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"justdoit"] boolValue] == YES) {
+            NSThread *thread = [[NSThread alloc]initWithTarget:self selector:@selector(willShowView:) object:[NSNumber numberWithBool:YES]];
+            [thread start];
+            [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"justdoit"];
+        }
+        else
+        {
+            NSThread *thread = [[NSThread alloc]initWithTarget:self selector:@selector(willShowView:) object:[NSNumber numberWithBool:NO]];
+            [thread start];
+        }
     }
 }
 
@@ -1111,7 +1118,12 @@
         
         url = NSLocalizedString(key, nil);
         
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+        TipsWebViewController *tips = [[TipsWebViewController alloc] init];
+        [tips setTipsUrl:url];
+        [self.navigationController pushViewController:tips animated:YES];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"gototips"];
+
     }
 }
 
@@ -1224,6 +1236,7 @@
 }
 
 - (void)scrollUpadateData{
+
     CGRect rx = [UIScreen mainScreen ].bounds;
     NSLog(@"scrollUpdateData:%d, %d",plotTag,[DataBase scrollWidth:plotTag]);
     int range = [DataBase scrollWidth:plotTag];
