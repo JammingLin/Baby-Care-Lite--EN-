@@ -1681,6 +1681,50 @@
 			path = TipsImage;
 			sourceTree = "<group>";
 		};
+		48EC1DE1186415BA00965254 /* ActivityController */ = {
+			isa = PBXGroup;
+			children = (
+				CE0167D8174B45AB00462363 /* feedViewController.h */,
+				CE0167D9174B45AB00462363 /* feedViewController.m */,
+				CE0167DA174B45AB00462363 /* feedViewController.xib */,
+				CE3826EB174DEAE2009AD8DA /* diaperViewController.h */,
+				CE3826EC174DEAE2009AD8DA /* diaperViewController.m */,
+				CE3826ED174DEAE2009AD8DA /* diaperViewController.xib */,
+				CE3826F0174DEAFA009AD8DA /* sleepViewController.h */,
+				CE3826F1174DEAFA009AD8DA /* sleepViewController.m */,
+				CE3826F2174DEAFA009AD8DA /* sleepViewController.xib */,
+				CE3826F5174DEB0A009AD8DA /* playViewController.h */,
+				CE3826F6174DEB0A009AD8DA /* playViewController.m */,
+				CE3826F7174DEB0B009AD8DA /* playViewController.xib */,
+				CE3826FA174DEB21009AD8DA /* bathViewController.h */,
+				CE3826FB174DEB21009AD8DA /* bathViewController.m */,
+				CE3826FC174DEB22009AD8DA /* bathViewController.xib */,
+			);
+			name = ActivityController;
+			sourceTree = "<group>";
+		};
+		48EC1DE2186415D800965254 /* ActivitySave */ = {
+			isa = PBXGroup;
+			children = (
+				CE075A35175081AD00C57E27 /* save_feedview.h */,
+				CE075A36175081AD00C57E27 /* save_feedview.m */,
+				CE075A381750820B00C57E27 /* save_diaperview.h */,
+				CE075A391750820C00C57E27 /* save_diaperview.m */,
+				CE075A3B1750821E00C57E27 /* save_sleepview.h */,
+				CE075A3C1750821E00C57E27 /* save_sleepview.m */,
+				CE075A3E1750822C00C57E27 /* save_playview.h */,
+				CE075A3F1750822D00C57E27 /* save_playview.m */,
+				CE075A411750824000C57E27 /* save_bathview.h */,
+				CE075A421750824000C57E27 /* save_bathview.m */,
+				CEF1F4951754AEAB005B3ECD /* ActivityItem.h */,
+				CEF1F4961754AEAC005B3ECD /* ActivityItem.m */,
+				480C04CA18239F8F00846E13 /* DurationPickerView.h */,
+				480C04CB18239F8F00846E13 /* DurationPickerView.m */,
+				480C04CD18239FC100846E13 /* DurationPickerView.xib */,
+			);
+			name = ActivitySave;
+			sourceTree = "<group>";
+		};
 		7215971117453680006FD415 = {
 			isa = PBXGroup;
 			children = (
@@ -2030,36 +2074,8 @@
 		CE0168AC174B682E00462363 /* ActivityClass */ = {
 			isa = PBXGroup;
 			children = (
-				CE0167D8174B45AB00462363 /* feedViewController.h */,
-				CE0167D9174B45AB00462363 /* feedViewController.m */,
-				CE0167DA174B45AB00462363 /* feedViewController.xib */,
-				CE3826EB174DEAE2009AD8DA /* diaperViewController.h */,
-				CE3826EC174DEAE2009AD8DA /* diaperViewController.m */,
-				CE3826ED174DEAE2009AD8DA /* diaperViewController.xib */,
-				CE3826F0174DEAFA009AD8DA /* sleepViewController.h */,
-				CE3826F1174DEAFA009AD8DA /* sleepViewController.m */,
-				CE3826F2174DEAFA009AD8DA /* sleepViewController.xib */,
-				CE3826F5174DEB0A009AD8DA /* playViewController.h */,
-				CE3826F6174DEB0A009AD8DA /* playViewController.m */,
-				CE3826F7174DEB0B009AD8DA /* playViewController.xib */,
-				CE3826FA174DEB21009AD8DA /* bathViewController.h */,
-				CE3826FB174DEB21009AD8DA /* bathViewController.m */,
-				CE3826FC174DEB22009AD8DA /* bathViewController.xib */,
-				CE075A35175081AD00C57E27 /* save_feedview.h */,
-				CE075A36175081AD00C57E27 /* save_feedview.m */,
-				CE075A381750820B00C57E27 /* save_diaperview.h */,
-				CE075A391750820C00C57E27 /* save_diaperview.m */,
-				CE075A3B1750821E00C57E27 /* save_sleepview.h */,
-				CE075A3C1750821E00C57E27 /* save_sleepview.m */,
-				CE075A3E1750822C00C57E27 /* save_playview.h */,
-				CE075A3F1750822D00C57E27 /* save_playview.m */,
-				CE075A411750824000C57E27 /* save_bathview.h */,
-				CE075A421750824000C57E27 /* save_bathview.m */,
-				CEF1F4951754AEAB005B3ECD /* ActivityItem.h */,
-				CEF1F4961754AEAC005B3ECD /* ActivityItem.m */,
-				480C04CA18239F8F00846E13 /* DurationPickerView.h */,
-				480C04CB18239F8F00846E13 /* DurationPickerView.m */,
-				480C04CD18239FC100846E13 /* DurationPickerView.xib */,
+				48EC1DE2186415D800965254 /* ActivitySave */,
+				48EC1DE1186415BA00965254 /* ActivityController */,
 			);
 			name = ActivityClass;
 			sourceTree = "<group>";
@@ -3080,8 +3096,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Amoycare Information Technology Co., Ltd (D6MQ5ZWZVN)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Amoycare Information Technology Co., Ltd (D6MQ5ZWZVN)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: LI TINGBIN (FV378L5RHS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: LI TINGBIN (FV378L5RHS)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -3112,8 +3128,8 @@
 					"-Objc",
 				);
 				PRODUCT_NAME = "Amoy Baby Care";
-				PROVISIONING_PROFILE = "65585F01-A29C-42E5-B61F-E32F6D9ED6B3";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "65585F01-A29C-42E5-B61F-E32F6D9ED6B3";
+				PROVISIONING_PROFILE = "9522CD76-E9C3-4F3C-925F-AEBDEF13DD36";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9522CD76-E9C3-4F3C-925F-AEBDEF13DD36";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = armv7;
@@ -3126,8 +3142,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Amoycare Information Technology Co., Ltd (D6MQ5ZWZVN)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Amoycare Information Technology Co., Ltd (D6MQ5ZWZVN)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: LI TINGBIN (FV378L5RHS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: LI TINGBIN (FV378L5RHS)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -3158,8 +3174,8 @@
 					"-Objc",
 				);
 				PRODUCT_NAME = "Amoy Baby Care";
-				PROVISIONING_PROFILE = "65585F01-A29C-42E5-B61F-E32F6D9ED6B3";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "65585F01-A29C-42E5-B61F-E32F6D9ED6B3";
+				PROVISIONING_PROFILE = "9522CD76-E9C3-4F3C-925F-AEBDEF13DD36";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9522CD76-E9C3-4F3C-925F-AEBDEF13DD36";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = armv7;
