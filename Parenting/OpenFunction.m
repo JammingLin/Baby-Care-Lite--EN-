@@ -20,11 +20,7 @@
 
 + (void) openUserReviews
 {
-    //NSString *str = [NSString stringWithFormat:
-    //                 @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%d",706557892];
-    NSString *str = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/cn/app/bao-bei-ji-hua-jian-ban-rang/id706557892?mt=8"];
-    https://itunes.apple.com/cn/app/bao-bei-ji-hua-jian-ban-rang/id706557892?mt=8
-    //NSLog(@"openuserreviews %@ ", str);
+    NSString *str = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/us/app/baby-care-lite-make-you-professional/id733452061?mt=8"];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
 }
 
